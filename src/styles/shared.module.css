@@ -8,13 +8,21 @@
   z-index: 2;
 }
 
+.serviceCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .sectionContainer {
   width: 100%;
   max-width: 1400px;
 }
 
 .creamBackground {
-  background-color: rgba(251, 200, 0, 0.3);  /* FBC800 with 0.5 opacity */
+  background-color: #EAE4F3;
   border-radius: 48px;
   padding-top: 150px;
   position: relative;
@@ -29,4 +37,23 @@
   padding: 0 20px;
   position: relative;
   z-index: 2;
+}
+
+.ornaments {
+  position: relative;
+}
+
+.circleOrnament1 {
+  position: absolute;
+  bottom: -80px;
+  left: 0;
+  width: 80px;
+}
+
+.circleOrnament2 {
+  position: absolute;
+  top: 250px;
+  right: 0;
+  z-index: -1;
+  width: 250px;
 }

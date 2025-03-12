@@ -6,13 +6,13 @@ export function EmailBanner() {
     <div className={classes.wrapper}>
       <div className={classes.body}>
         <Title className={classes.title}>Penasaran dengan program Scholarsia?</Title>
-        <Text fz="sm" c="dimmed">
+        <Text fz="sm" c="white">
         Program Scholarsia memberikan akses ke beasiswa dan peluang pendidikan dari lebih dari 50 universitas internasional, Gabung Sekarang & Dapatkan Info Beasiswa dan Program Lainnya yang Menginspirasi!
         </Text>
 
         <div className={classes.controls}>
           <TextInput
-            placeholder="Your email"
+            placeholder="Masukkan Emailmu!"
             classNames={{ input: classes.input, root: classes.inputWrapper }}
           />
           <Button className={classes.control} color='#E63946'>Subscribe</Button>

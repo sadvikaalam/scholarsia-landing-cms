@@ -4,17 +4,20 @@ import { Container, Group, SegmentedControl, Button } from '@mantine/core';
 // import { useDisclosure } from '@mantine/hooks';
 import classes from './navigation.module.css';
 import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
 
 const links = [
   { link: '/', label: '🏠' },
-  { link: '/features', label: 'Development Center' },
-  { link: '/docs', label: 'Scholarship Service' },
-  { link: '/about', label: 'Partners' },
-  { link: '/pricing', label: 'About Us' },
+  { link: '/development-center', label: 'Pusat Pengembangan' },
+  { link: '/scholarship-service', label: 'Layanan Beasiswa' },
+  { link: '/mitra', label: 'Mitra' },
+  { link: '/about', label: 'Tentang Kami' },
 ];
 
 export function Navigation() {
   // const [opened, { toggle }] = useDisclosure(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const segments = links.map((link) => ({
     value: link.link,
@@ -45,8 +48,9 @@ export function Navigation() {
           >
             <SegmentedControl
               data={segments}
+              value={pathname}
               onChange={(value) => {
-                console.log('Navigate to:', value);
+                router.push(value);
               }}
               radius="xl"
               size="md"
@@ -55,7 +59,7 @@ export function Navigation() {
                 indicator: classes.segmentedControlIndicator,
                 control: classes.segmentedControlControl,
                 label: classes.segmentedControlLabel,
-                }}
+              }}
             />
           </Group>
           {/* <Group gap="xs" visibleFrom="sm">

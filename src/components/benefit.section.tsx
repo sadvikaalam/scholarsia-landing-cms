@@ -28,11 +28,11 @@ export function BenefitSection() {
       <Container size="lg">
         <div className={styles.sectionHeader}>
           {/* <Text tt="capitalize" fw="bold" fz="lg">Dapat apa di Scholarsia?</Text> */}
-          <Text component="h2" className={styles.sectionTitle}>
-            Who We Are?
+          <Text style={{ textAlign: 'center' }} component="h2" className={styles.sectionTitle}>
+            Tentang Kami
           </Text>
           <Text className={styles.sectionDescription}>
-            We are a leading education platform committed to connecting Indonesian students with the best international education opportunities. Through global scholarship information, student exchange programs, and international educational partnerships, we help Indonesian students achieve their dreams and become a generation ready to compete in the global arena.
+            Kami adalah platform edukasi terdepan yang berkomitmen untuk menghubungkan pelajar Indonesia dengan peluang pendidikan internasional terbaik. Dengan layanan informasi beasiswa global, program pertukaran pelajar, dan kemitraan pendidikan internasional, kami mendukung pelajar Indonesia meraih cita-cita mereka dan menjadi generasi yang siap bersaing di dunia global.
           </Text>
         </div>
 

@@ -1,5 +1,6 @@
 import { Container, Title, Text, Button, Group, Badge } from '@mantine/core';
 import { AuroraBackground } from './aurora-background/aurora-background';
+import { IconArrowRight } from '@tabler/icons-react';
 export function HeroSection() {
   return (
     <AuroraBackground style={{
@@ -100,17 +101,17 @@ export function HeroSection() {
                 <Title
                   order={2}
                   fz={{ base: 32, md: 48 }}
-                  fw={500}
+                  fw="600"
                   lh={1.2}
                   mb="md"
                 >
-                  Unlock Your Potential with Global Access to World-Class Education
+                  Maksimalkan <span style={{color: '#E63946'}}>Potensimu</span> dengan Akses Global ke Pendidikan Terbaik
                 </Title>
                 <Text size="lg" c="dimmed" maw={600}>
-                We offer comprehensive solutions for Indonesian students to access the best education worldwide. Ready to start your educational journey?
+                Platform Unggul yang Menghubungkan Pelajar Indonesia dengan Beasiswa, Program Pertukaran, dan Kesempatan Pendidikan Internasional
                 </Text>
                 <Group mt="xl">
-                  <Button color='#E63946'>Explore Our Program!</Button>
+                  <Button rightSection={<IconArrowRight />} size='lg' color='#E63946'>Jelajahi Program Kami!</Button>
                 </Group>
               </div>
               <div style={{ display: 'flex', justifyContent: 'center' }}>

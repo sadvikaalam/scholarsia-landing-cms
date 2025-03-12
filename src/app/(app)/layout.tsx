@@ -3,13 +3,15 @@
 import '@mantine/core/styles.css';
 
 import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
+import { Navigation } from '@/components/navigation';
+import { Footer } from '@/components/footer';
 
 export const metadata = {
   title: 'My Mantine app',
   description: 'I have followed setup instructions carefully',
 };
 
-export default function RootLayout({
+export default function AppLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -20,7 +22,11 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider>
+          <Navigation />
+          {children}
+          <Footer />
+        </MantineProvider>
       </body>
     </html>
   );

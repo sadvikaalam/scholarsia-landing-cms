@@ -1,0 +1,45 @@
+.heroSection {
+  padding: 120px 0 80px;
+  background-color: #EAE4F3;
+  margin-top: -60px;
+  border-radius: 0 0 24px 24px;
+}
+
+.missionSection {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.valuesSection {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.valueCard {
+  padding: 30px;
+  background-color: white;
+  border-radius: 12px;
+  height: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.teamSection {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.teamCard {
+  text-align: center;
+  padding-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.teamCard:hover {
+  transform: translateY(-5px);
+} 
