@@ -2,9 +2,25 @@ import { Box, Text, Container, Stack, Image } from '@mantine/core';
 import './styles.css';
 import { HeroSection } from '@/components/hero.section';
 import { BenefitSection } from '@/components/benefit.section';
-import { ServiceCard, servicesData, ServicesSection } from '@/components/services.section';
+import { ServiceCard, ServiceData, ServicesSection } from '@/components/services.section';
 import { BlogSection } from '@/components/blog.section';
 import { EmailBanner } from '@/components/email-banner.section';
+import { IconSchool } from '@tabler/icons-react';
+import { IconTent } from '@tabler/icons-react';
+
+// Extract service data
+const servicesData: ServiceData[] = [
+  {
+    icon: IconSchool,
+    title: 'Scolarsia Development Center',
+    description: 'Tempat di mana inovasi pendidikan bertemu dengan peluang global. Kami menyediakan berbagai program pengembangan yang memperkaya keterampilan pelajar Indonesia, mempersiapkan mereka untuk tantangan dunia internasional melalui kolaborasi pendidikan dan pelatihan berbasis teknologi.',
+  },
+  {
+    icon: IconTent,
+      title: 'Scolarshia Scholarsip Services',
+      description: 'Menawarkan akses langsung ke berbagai peluang beasiswa internasional. Kami membantu pelajar Indonesia mengidentifikasi, mendaftar, dan mempersiapkan diri untuk mendapatkan beasiswa dari universitas terbaik di dunia, membuka jalan menuju pendidikan global yang berkualitas.'
+  },
+];
 
 export default async function Home() {
 

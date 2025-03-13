@@ -66,7 +66,7 @@ function ServicesGrid({ services }: ServicesGridProps) {
     );
 }
 
-export const scholarshipServices: ServiceData[] = [
+const scholarshipServices: ServiceData[] = [
     {
         icon: IconSchool,
         title: 'Konsultasi Beasiswa',
@@ -89,7 +89,7 @@ export const scholarshipServices: ServiceData[] = [
     },
 ];
 
-export const capacityBuildingServices: ServiceData[] = [
+const capacityBuildingServices: ServiceData[] = [
     {
         icon: IconSchool,
         title: 'Digital Skill Bootcamp',

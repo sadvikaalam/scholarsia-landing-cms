@@ -17,25 +17,11 @@ import { Group, Text, Image, Stack, GridCol, Grid } from '@mantine/core';
 // import { AuroraBackground } from './AuroraBackground';``
 
 // Define the service data type
-type ServiceData = {
+export type ServiceData = {
   icon: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
   title: string;
   description: string;
 }
-
-// Extract service data
-export const servicesData: ServiceData[] = [
-  {
-    icon: IconSchool,
-    title: 'Scolarsia Development Center',
-    description: 'Tempat di mana inovasi pendidikan bertemu dengan peluang global. Kami menyediakan berbagai program pengembangan yang memperkaya keterampilan pelajar Indonesia, mempersiapkan mereka untuk tantangan dunia internasional melalui kolaborasi pendidikan dan pelatihan berbasis teknologi.',
-  },
-  {
-    icon: IconTent,
-      title: 'Scolarshia Scholarsip Services',
-      description: 'Menawarkan akses langsung ke berbagai peluang beasiswa internasional. Kami membantu pelajar Indonesia mengidentifikasi, mendaftar, dan mempersiapkan diri untuk mendapatkan beasiswa dari universitas terbaik di dunia, membuka jalan menuju pendidikan global yang berkualitas.'
-  },
-];
 
 // Reusable ServiceCard component
 export const ServiceCard: React.FC<ServiceData & { center?: boolean }> = ({ 

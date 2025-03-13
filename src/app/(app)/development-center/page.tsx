@@ -1,13 +1,35 @@
 'use client';
 
 import { CardSection, Title, Text, SimpleGrid, Card, Image, Badge, Group, Button, rem, Stack, Box } from '@mantine/core';
-import { Icon, IconArrowRight, IconCertificate, IconMoonStars, IconProps, IconSchool, IconTent, IconDeviceDesktop, IconBrowser, IconServer, IconLicense } from '@tabler/icons-react';
+import { Icon, IconArrowRight, IconCertificate, IconMoonStars, IconProps, IconSchool, IconTent, IconDeviceDesktop, IconBrowser, IconServer, IconLicense, IconWorld } from '@tabler/icons-react';
 import classes from './development-center.module.css';
 import styles from '@/styles/shared.module.css';
 import { ServiceCard } from '@/components/services.section';
 import { ForwardRefExoticComponent, RefAttributes } from 'react';
 import { EmailBanner } from '@/components/email-banner.section';
-import { scholarshipServices } from '../scholarship-service/page';
+
+const scholarshipServices: ServiceData[] = [
+  {
+      icon: IconSchool,
+      title: 'Konsultasi Beasiswa',
+      description: 'Dapatkan bimbingan personal dari konsultan berpengalaman yang akan membantu Anda menemukan beasiswa yang sesuai dengan profil akademik, minat, dan tujuan karir Anda. Kami menawarkan strategi aplikasi yang komprehensif untuk meningkatkan peluang Anda mendapatkan beasiswa impian.',
+  },
+  {
+      icon: IconCertificate,
+      title: 'Persiapan Dokumen',
+      description: 'Layanan penyusunan dan review dokumen aplikasi beasiswa, termasuk personal statement, CV akademik, dan surat rekomendasi. Tim kami akan membantu Anda menyusun dokumen yang menarik dan sesuai dengan persyaratan beasiswa yang Anda tuju.',
+  },
+  {
+      icon: IconWorld,
+      title: 'Informasi Beasiswa Global',
+      description: 'Akses database komprehensif yang berisi ribuan peluang beasiswa dari universitas dan lembaga terkemuka di seluruh dunia. Database kami diperbarui secara berkala untuk memastikan Anda mendapatkan informasi terbaru tentang deadline, persyaratan, dan proses aplikasi.',
+  },
+  {
+      icon: IconTent,
+      title: 'Persiapan Wawancara',
+      description: 'Program pelatihan intensif untuk mempersiapkan Anda menghadapi wawancara beasiswa. Kami menyediakan simulasi wawancara dengan feedback langsung dari para profesional yang berpengalaman dalam proses seleksi beasiswa internasional.',
+  },
+];
 
 type ServiceData = {
   icon: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
@@ -67,7 +89,7 @@ function ServicesGrid({ services }: ServicesGridProps) {
   );
 }
 
-export const servicesData: ServiceData[] = [
+const servicesData: ServiceData[] = [
   {
     icon: IconDeviceDesktop,
     title: 'IT Solution',
@@ -90,7 +112,7 @@ export const servicesData: ServiceData[] = [
   },
 ];
 
-export const studentDevelopmentServices: ServiceData[] = [
+const studentDevelopmentServices: ServiceData[] = [
   {
       icon: IconSchool,
       title: 'Scolarsia NextGen Student',
