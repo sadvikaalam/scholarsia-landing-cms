@@ -3,56 +3,12 @@ import { AuroraBackground } from './aurora-background/aurora-background';
 import { IconArrowRight } from '@tabler/icons-react';
 export function HeroSection() {
   return (
-    <AuroraBackground style={{
-      position: 'relative',
-      marginTop: '-60px',
-      paddingTop: '60px',
-      height: 'auto',
-      minHeight: '100vh'
-    }}>
-    {/* <div style={{
-      position: 'relative',
-      minHeight: '100vh',
-      zIndex: 1
-    }}> */}
-      {/* <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundImage: 'url(pattern-bg.svg)',
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-      }} />
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundImage: 'url(pattern-bg.svg)',
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        transform: 'rotate(180deg)',
-      }} /> */}
 
-        {/* <div style={{
-          position: 'relative',
-          background: 'white',
-          borderRadius: '16px',
-          padding: '2rem',
-          boxShadow: '0 0 40px 20px white',
-          backdropFilter: 'blur(10px)',
-          marginTop: '2rem',
-        }}> */}
         <div style={{
           width: '100%',
           maxWidth: '1400px',
           margin: '0 auto',
-          padding: '120px 24px 260px 24px',
+          padding: '70px 24px 260px 24px',
         }}>
           <Container size="xl" style={{ position: 'relative' }}>
             {/* <div style={{
@@ -116,7 +72,7 @@ export function HeroSection() {
               </div>
               <div style={{ display: 'flex', justifyContent: 'center' }}>
                 <img
-                  src="hero-image.svg"
+                  src="home-hero.svg"
                   alt="Hero illustration"
                   style={{
                     maxWidth: '100%',
@@ -127,8 +83,5 @@ export function HeroSection() {
             </div>
           </Container>
         </div>
-        {/* </div> */}
-    {/* </div> */}
-    </AuroraBackground>
   );
 }
