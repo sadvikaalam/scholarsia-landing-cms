@@ -7,8 +7,8 @@ import { Navigation } from '@/components/navigation';
 import { Footer } from '@/components/footer';
 
 export const metadata = {
-  title: 'My Mantine app',
-  description: 'I have followed setup instructions carefully',
+  title: 'Scolarsia - Scholarship and Development Center',
+  description: 'Platform edukasi terdepan yang menghubungkan pelajar Indonesia dengan peluang pendidikan internasional terbaik.',
 };
 
 export default function AppLayout({
