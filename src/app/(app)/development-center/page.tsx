@@ -219,7 +219,8 @@ export default function DevelopmentCenter() {
           marginTop: '40px',
           zIndex: 1,
           borderRadius: '0 0 16px 16px',
-          height: '400px'
+          height: '400px',
+          alignSelf: 'center'
         }}
       >
         <Title order={1} ta="center" size="3rem" style={{ color: '#fff', lineHeight: 1.2 }}>
@@ -229,7 +230,7 @@ export default function DevelopmentCenter() {
           Scolarsia Development Center adalah pusat unggulan yang mengintegrasikan pengembangan keterampilan dengan inovasi pendidikan global. Kami menghadirkan program pelatihan komprehensif berbasis teknologi untuk memberdayakan pelajar dan profesional Indonesia, membekali mereka dengan keahlian relevan agar siap bersaing di kancah internasional. Melalui pendekatan kolaboratif, kami mendukung transformasi digital dan membangun generasi yang mampu menghadapi tantangan global dengan solusi kreatif dan inovatif.
         </Text>
 
-        <SimpleGrid cols={{ base: 1, xs: 2, md: 3 }} spacing="xl" p="md" mt={50}>
+        <SimpleGrid cols={{ base: 1, xs: 2, md: 3 }} spacing="xl" p="md" mt={50} style={{ justifySelf: 'center' }}>
           {cards}
         </SimpleGrid>
       </Box>
@@ -244,7 +245,6 @@ export default function DevelopmentCenter() {
             description="Kami menghadirkan solusi IT cerdas yang menghubungkan dunia pendidikan dan bisnis untuk mencapai efisiensi dan inovasi. Dengan keahlian kami dalam solusi IT, Learning Management System (LMS), IT Management Solution, dan konsultasi lisensi, kami menyediakan layanan yang terintegrasi dan adaptif untuk mendukung transformasi digital.
 Kami berkomitmen untuk memberdayakan klien dalam meraih pertumbuhan berkelanjutan melalui teknologi yang memajukan pendidikan dan bisnis di era digital yang terus berkembang."
           />
-
           <ServicesGrid services={servicesData} />
         </Box>
 
