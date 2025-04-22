@@ -14,6 +14,10 @@ import {
   AccordionPanel,
   SimpleGrid,
   Center,
+  AspectRatio,
+  Flex,
+  Card,
+  CardSection,
 } from "@mantine/core";
 import { EmailBanner } from "@/components/email-banner.section";
 import {
@@ -27,23 +31,28 @@ import {
   IconLetterD,
   IconLetterG,
   IconLetterE,
+  IconFileFilled,
 } from "@tabler/icons-react";
 import QuotesIcon from "@/components/icons/QuotesIcon";
+import GlobeIcon from "@/components/icons/GlobeIcon";
+import CommunityIcon from "@/components/icons/CommunityIcon";
+import BulbIcon from "@/components/icons/BulbIcon";
 
 export default function AboutPage() {
   return (
     <>
+      {/* About Us */}
       <Box
         py={80}
         pb={80}
         mt={40}
         style={{
-          display: 'block',
+          display: "block",
           borderRadius: "0 0 24px 24px",
           backgroundImage: `url('/bg-pattern-2.png')`, // Optional SVG or PNG
-          backgroundSize: '100%',
-          backgroundRepeat: 'no-repeat',
-          backgroundBlendMode: 'multiply',
+          backgroundSize: "100%",
+          backgroundRepeat: "no-repeat",
+          backgroundBlendMode: "multiply",
           backgroundColor: "#E63946",
         }}
       >
@@ -66,32 +75,69 @@ export default function AboutPage() {
               </Stack>
             </GridCol>
             <GridCol span={{ base: 12, md: 6 }}>
-                <Image
-                  style={{
-                    borderRadius: 15,
-                  }}
-                  src="/hero-picture-1.png"
-                  alt="Scholarsia Team"
-                  radius="md"
-                  fit="cover"
-                  height={400}
-                />
+              <Flex
+                direction={"row-reverse"}
+                justify={"end"}
+                gap={"md"}
+                style={{ position: "relative" }}
+                wrap={"wrap"}
+              >
+                <AspectRatio ratio={1 / 1} maw={155} mt={{ base: 75, md: 150 }}>
+                  <Image
+                    src="/about-us-hero-img-2.jpg"
+                    alt="Scholarsia Team"
+                    radius="md"
+                    fit="cover"
+                  />
+                </AspectRatio>
+                <Flex
+                  direction={"column"}
+                  justify={"end"}
+                  align={{ base: "start", md: "end" }}
+                  gap={"md"}
+                >
+                  <AspectRatio ratio={1 / 1} maw={{ base: 155, md: 260 }}>
+                    <Image
+                      src="/about-us-hero-img-1.jpg"
+                      alt="Scholarsia Team"
+                      radius="md"
+                      fit="cover"
+                    />
+                  </AspectRatio>
+                  <AspectRatio ratio={1 / 1} maw={155}>
+                    <Image
+                      src="/about-us-hero-img-3.jpg"
+                      alt="Scholarsia Team"
+                      radius="md"
+                      fit="cover"
+                    />
+                  </AspectRatio>
+                </Flex>
+              </Flex>
             </GridCol>
           </Grid>
         </Container>
       </Box>
 
+      {/* Our Vision */}
       <Box
         py={80}
         style={{
           backgroundImage: `url(./bg-visi.png)`,
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
         }}
       >
         <Container size="lg">
-          <Stack gap="xl" h={400} align="center" maw={'48rem'} mx={'auto'} justify="center">
+          <Stack
+            gap="xl"
+            h={400}
+            align="center"
+            maw={"48rem"}
+            mx={"auto"}
+            justify="center"
+          >
             <Title order={2} ta={"center"} size="2.5rem" c={"#D64045"}>
               Visi Kami
             </Title>
@@ -105,57 +151,175 @@ export default function AboutPage() {
         </Container>
       </Box>
 
+      {/* Our Mission */}
       <Box py={80} bg="#f2f2f2" style={{ position: "relative" }}>
-        <Image
-          style={{
-            position: "absolute",
-            top: 290,
-            right: 0,
-            zIndex: 0,
-            width: "232px",
-          }}
-          src="/circle-ornament-2.svg"
-          alt="Ornament"
-        />
+        <div className="mantine-visible-from-md">
+          <Image
+            style={{
+              position: "absolute",
+              top: 300,
+              right: 0,
+              zIndex: 0,
+              width: "200px",
+            }}
+            src="/circle-ornament-2.svg"
+            alt="Ornament"
+          />
+        </div>
         <Container size="lg">
-          <Grid gutter={50}>
-            <GridCol span={{ base: 12, md: 6 }}>
-              <Image
-                src="/hero-picture-2.png"
-                alt="Our Mission"
-                radius="md"
-                height={400}
-                fit="cover"
-              />
-            </GridCol>
-            <GridCol span={{ base: 12, md: 6 }}>
-              <Stack gap="xl">
-                <Box style={{ position: "relative", zIndex: 1 }}>
-                  <Title order={2} size="2.5rem">
-                    Misi Kami
-                  </Title>
-                  <Text size="lg">
-                    Di Scholarsia, kami percaya bahwa setiap pelajar berbakat
-                    berhak mendapatkan akses ke pendidikan kelas dunia tanpa
-                    memandang latar belakang mereka. Misi kami adalah
-                    menjembatani kesenjangan antara pelajar Indonesia dan
-                    institusi pendidikan internasional melalui layanan beasiswa
-                    komprehensif, program pengembangan, dan komunitas yang
-                    mendukung.
-                  </Text>
-                  <Text size="lg">
-                    Kami berusaha menjadi katalisator yang mengubah aspirasi
-                    pendidikan menjadi kenyataan, memberdayakan generasi muda
-                    Indonesia untuk menjadi warga global dan pemimpin masa
-                    depan.
-                  </Text>
+          <Title c={"#D64045"} order={2} size="2.5rem" ta="center" mb={50}>
+            Misi Kita
+          </Title>
+          <SimpleGrid
+            mx={"auto"}
+            maw={"rem"}
+            cols={{ base: 1, xs: 2, md: 4 }}
+            mt={50}
+            spacing="md"
+          >
+            <Card
+              shadow="md"
+              radius="md"
+              style={{ marginBottom: "20px", borderRadius: "8px" }}
+              p="lg"
+            >
+              <CardSection>
+                <Box p="md">
+                  <Stack justify="center">
+                    <Box
+                      bg={"#E7E7E7"}
+                      p={"md"}
+                      style={{
+                        borderRadius: "7.5px",
+                        display: "flex",
+                        width: "80px",
+                        height: "80px",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <GlobeIcon fill="#E63946" />
+                    </Box>
+                    <Text fw={700} size="lg">
+                      Menyediakan Informasi Beasiswa Global
+                    </Text>
+                    <Text size="sm" c="dimmed">
+                      Memberikan informasi terkini dan terpercaya tentang
+                      peluang beasiswa internasional bagi pelajar Indonesia.
+                    </Text>
+                  </Stack>
                 </Box>
-              </Stack>
-            </GridCol>
-          </Grid>
+              </CardSection>
+            </Card>
+            <Card
+              shadow="md"
+              radius="md"
+              style={{ marginBottom: "20px", borderRadius: "8px" }}
+              p="lg"
+            >
+              <CardSection>
+                <Box p="md">
+                  <Stack justify="center">
+                    <Box
+                      bg={"#E7E7E7"}
+                      p={"md"}
+                      style={{
+                        borderRadius: "7.5px",
+                        display: "flex",
+                        width: "80px",
+                        height: "80px",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <BulbIcon fill="#E63946" />
+                    </Box>
+                    <Text fw={700} size="lg">
+                      Mendukung Proses Aplikasi Pelajar
+                    </Text>
+                    <Text size="sm" c="dimmed">
+                      Memberikan informasi terkini dan terpercaya tentang
+                      peluang beasiswa internasional bagi pelajar Indonesia.
+                    </Text>
+                  </Stack>
+                </Box>
+              </CardSection>
+            </Card>
+            <Card
+              shadow="md"
+              radius="md"
+              style={{ marginBottom: "20px", borderRadius: "8px" }}
+              p="lg"
+            >
+              <CardSection>
+                <Box p="md">
+                  <Stack justify="center">
+                    <Box
+                      bg={"#E7E7E7"}
+                      p={"md"}
+                      style={{
+                        borderRadius: "7.5px",
+                        display: "flex",
+                        width: "80px",
+                        height: "80px",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <IconFileFilled size={48} fill="#E63946" />
+                    </Box>
+                    <Text fw={700} size="lg">
+                      Membangun Kerja Sama Internasional
+                    </Text>
+                    <Text size="sm" c="dimmed">
+                      Memfasilitasi kemitraan antara universitas global dan
+                      lembaga pendidikan Indonesia untuk pertukaran, penelitian,
+                      dan pengembangan kurikulum.
+                    </Text>
+                  </Stack>
+                </Box>
+              </CardSection>
+            </Card>
+            <Card
+              shadow="md"
+              radius="md"
+              style={{ marginBottom: "20px", borderRadius: "8px" }}
+              p="lg"
+            >
+              <CardSection>
+                <Box p="md">
+                  <Stack justify="center">
+                    <Box
+                      bg={"#E7E7E7"}
+                      p={"md"}
+                      style={{
+                        borderRadius: "7.5px",
+                        display: "flex",
+                        width: "80px",
+                        height: "80px",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <CommunityIcon fill="#E63946" />
+                    </Box>
+                    <Text fw={700} size="lg">
+                      Mengembangkan Potensi Global Pelajar
+                    </Text>
+                    <Text size="sm" c="dimmed">
+                      Mempersiapkan pelajar Indonesia menghadapi tantangan
+                      global melalui program pendidikan dan pengembangan diri
+                      yang relevan.
+                    </Text>
+                  </Stack>
+                </Box>
+              </CardSection>
+            </Card>
+          </SimpleGrid>
         </Container>
       </Box>
 
+      {/* Why Choose Us */}
       <Box
         py={80}
         pb={80}
@@ -193,7 +357,8 @@ export default function AboutPage() {
         </Container>
       </Box>
 
-      <Box py={80} bg="#f8f9fa">
+      {/* Our Core Value */}
+      <Box py={80} bg="#f2f2f2">
         <Container size="lg">
           <Title order={2} size="2.5rem" ta="center" mb={50}>
             <Box mb={10}>
@@ -213,7 +378,6 @@ export default function AboutPage() {
               {["B", "R", "I", "D", "G", "E"].map((letter, index) => (
                 <Box
                   key={index}
-                  // p={30}
                   bg="white"
                   style={{
                     borderRadius: 12,
@@ -227,7 +391,7 @@ export default function AboutPage() {
                     justifyContent: "center",
                   }}
                 >
-                  <Group mb="xs">
+                  <Stack align="stretch" justify="center" mb="xs">
                     <Center
                       p={10}
                       h={"100%"}
@@ -257,7 +421,7 @@ export default function AboutPage() {
                         <IconLetterE size={250} color="white" />
                       )}
                     </Center>
-                    <Stack gap={8} p={20}>
+                    <Stack gap={8} justify="center" p={20}>
                       <Title order={3} size="xl">
                         {letter === "B"
                           ? "Bold Innovation"
@@ -285,7 +449,7 @@ export default function AboutPage() {
                           : "Selalu memberikan yang terbaik dalam konsultasi IT dan layanan edukasi untuk menciptakan nilai jangka panjang."}
                       </Text>
                     </Stack>
-                  </Group>
+                  </Stack>
                 </Box>
               ))}
             </SimpleGrid>
@@ -295,7 +459,6 @@ export default function AboutPage() {
               {["B", "R", "I", "D", "G", "E"].map((letter, index) => (
                 <Box
                   key={index}
-                  p={30}
                   bg="white"
                   style={{
                     borderRadius: 12,
@@ -308,16 +471,37 @@ export default function AboutPage() {
                     },
                   }}
                 >
-                  <Group align="center" mb="xs">
-                    <Box style={{ transform: "rotate(-10deg)" }}>
-                      {letter === "B" && <IconLetterB size={48} color="blue" />}
-                      {letter === "R" && <IconLetterR size={48} color="blue" />}
-                      {letter === "I" && <IconLetterI size={48} color="blue" />}
-                      {letter === "D" && <IconLetterD size={48} color="blue" />}
-                      {letter === "G" && <IconLetterG size={48} color="blue" />}
-                      {letter === "E" && <IconLetterE size={48} color="blue" />}
+                  <Flex wrap={"nowrap"} align={"stretch"} gap={"md"}>
+                    <Box
+                      bg={"red"}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderTopLeftRadius: 12,
+                        borderBottomLeftRadius: 12,
+                      }}
+                    >
+                      {letter === "B" && (
+                        <IconLetterB size={48} color="white" />
+                      )}
+                      {letter === "R" && (
+                        <IconLetterR size={48} color="white" />
+                      )}
+                      {letter === "I" && (
+                        <IconLetterI size={48} color="white" />
+                      )}
+                      {letter === "D" && (
+                        <IconLetterD size={48} color="white" />
+                      )}
+                      {letter === "G" && (
+                        <IconLetterG size={48} color="white" />
+                      )}
+                      {letter === "E" && (
+                        <IconLetterE size={48} color="white" />
+                      )}
                     </Box>
-                    <Stack gap={0}>
+                    <Stack gap={0} p={20} pl={0}>
                       <Title order={3} size="xl">
                         {letter === "B"
                           ? "Bold Innovation"
@@ -345,7 +529,7 @@ export default function AboutPage() {
                           : "Selalu memberikan yang terbaik dalam konsultasi IT dan layanan edukasi untuk menciptakan nilai jangka panjang."}
                       </Text>
                     </Stack>
-                  </Group>
+                  </Flex>
                 </Box>
               ))}
             </Stack>
@@ -353,21 +537,33 @@ export default function AboutPage() {
         </Container>
       </Box>
 
-      <Box py={80} bg="white">
+      {/* Our Team */}
+      <Box py={80} bg="#f2f2f2">
         <Container size="lg">
-          <Title order={2} size="2.5rem" ta="center" mb={50}>
-            <Box mb={10}>
-              <div
-                style={{
-                  width: 45,
-                  height: 4,
-                  backgroundColor: "#D64045",
-                  margin: "0 auto",
-                }}
-              />
-            </Box>
-            Tim Kami
-          </Title>
+          <Stack gap={20} mb={50} align="center">
+            <Title order={2} size="2.5rem" ta="center">
+              <Box mb={10}>
+                <div
+                  style={{
+                    width: 45,
+                    height: 4,
+                    backgroundColor: "#D64045",
+                    margin: "0 auto",
+                  }}
+                />
+              </Box>
+              Tim Kami
+            </Title>
+            <Text c={'dimmed'} ta={'center'}>
+              <Text span inherit fw={700}>Scolarsia</Text> memiliki tim yang terdiri dari individu-individu unik
+              dan ahli di bidangnya masing-masing. Kami menyambut berbagai
+              talenta dengan latar belakang yang beragam, yang memungkinkan kami
+              untuk terus berkembang dan saling belajar satu sama lain. Dengan
+              semangat kolaborasi dan inovasi, tim kami bekerja untuk
+              menciptakan dampak positif di dunia pendidikan dan membangun
+              solusi yang menginspirasi banyak orang.
+            </Text>
+          </Stack>
           <Grid>
             {[
               {
@@ -419,6 +615,7 @@ export default function AboutPage() {
         </Container>
       </Box>
 
+      {/* Contact Us */}
       <Box py={80} bg="#D64045">
         <Container size="lg">
           <Title order={2} size="3rem" ta="center" mb={30} c="white">
@@ -508,6 +705,7 @@ export default function AboutPage() {
         </Container>
       </Box>
 
+      {/* FAQ */}
       <Box py={80} bg="white">
         <Container size="lg">
           <Title order={2} size="2.5rem" ta="center" mb={50}>
