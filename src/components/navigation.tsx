@@ -1,34 +1,58 @@
-'use client';
+"use client";
 
-import { Container, Group, SegmentedControl, Button } from '@mantine/core';
+import {
+  Container,
+  Group,
+  SegmentedControl,
+  Button,
+  Combobox,
+  useCombobox,
+  InputBase,
+  Input,
+} from "@mantine/core";
 // import { useDisclosure } from '@mantine/hooks';
-import classes from './navigation.module.css';
-import Image from 'next/image';
-import { useRouter, usePathname } from 'next/navigation';
+import classes from "./navigation.module.css";
+import Image from "next/image";
+import { useRouter, usePathname } from "next/navigation";
+import { useState } from "react";
 
 const links = [
-  { link: '/', label: '🏠' },
-  { link: '/development-center', label: 'Pusat Pengembangan' },
-  { link: '/scholarship-service', label: 'Layanan Beasiswa' },
-  { link: '/mitra', label: 'Mitra' },
-  { link: '/about', label: 'Tentang Kami' },
+  { link: "/", label: "🏠" },
+  { link: "/development-center", label: "Pusat Pengembangan" },
+  { link: "/scholarship-service", label: "Layanan Beasiswa" },
+  { link: "/mitra", label: "Mitra" },
+  { link: "/about", label: "Tentang Kami" },
 ];
 
 export function Navigation() {
   // const [opened, { toggle }] = useDisclosure(false);
   const router = useRouter();
   const pathname = usePathname();
-
   const segments = links.map((link) => ({
     value: link.link,
     label: link.label,
   }));
 
+  const [value, setValue] = useState<string | undefined>(
+    links.find((link) => link.link === pathname)?.label
+  );
+
+  const combobox = useCombobox({
+    onDropdownClose: () => combobox.resetSelectedOption(),
+    onDropdownOpen: (eventSource) => {
+      if (eventSource === "keyboard") {
+        combobox.selectActiveOption();
+      } else {
+        combobox.updateSelectedOptionIndex("active");
+      }
+    },
+  });
+
   return (
     <header className={classes.header}>
       <Container size="xl">
         <div className={classes.inner}>
-          <div style={{ flex: '0 0 auto' }}>
+          <div style={{ flex: "0 0 auto" }}>
             <Image
               src="/scholarsia-logo.svg"
               alt="Scholarsia Logo"
@@ -38,12 +62,13 @@ export function Navigation() {
             />
           </div>
           <Group
+            visibleFrom="sm"
             justify="center"
             style={{
-              position: 'absolute',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              zIndex: 1
+              position: "absolute",
+              left: "50%",
+              transform: "translateX(-50%)",
+              zIndex: 1,
             }}
           >
             <SegmentedControl
@@ -61,6 +86,50 @@ export function Navigation() {
                 label: classes.segmentedControlLabel,
               }}
             />
+          </Group>
+          <Group
+            hiddenFrom="sm"
+            justify="end"
+            style={{
+              width: "100%",
+            }}
+          >
+            <Combobox
+              store={combobox}
+              resetSelectionOnOptionHover
+              onOptionSubmit={(val) => {
+                setValue(val);
+                combobox.updateSelectedOptionIndex("active");
+                combobox.closeDropdown();
+              }}
+            >
+              <Combobox.Target targetType="button">
+                <InputBase
+                  component="button"
+                  type="button"
+                  pointer
+                  rightSection={<Combobox.Chevron />}
+                  rightSectionPointerEvents="none"
+                  onClick={() => combobox.toggleDropdown()}
+                >
+                  {value || <Input.Placeholder>Pick value</Input.Placeholder>}
+                </InputBase>
+              </Combobox.Target>
+              <Combobox.Dropdown>
+                <Combobox.Options>
+                  {links.map((link) => (
+                    <Combobox.Option
+                      key={link.link}
+                      value={link.label}
+                      onClick={() => router.push(link.link)}
+                      active={link.label === value}
+                    >
+                      {link.label}
+                    </Combobox.Option>
+                  ))}
+                </Combobox.Options>
+              </Combobox.Dropdown>
+            </Combobox>
           </Group>
           {/* <Group gap="xs" visibleFrom="sm">
             <Button variant="subtle" size="sm">Log in</Button>
