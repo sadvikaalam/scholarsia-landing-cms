@@ -85,25 +85,53 @@ function FeaturedService({
   description,
 }: FeaturedServiceProps) {
   return (
-    <Group px={50} align="flex-start" grow mt={50} wrap="nowrap">
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        width={300}
-        height={300}
-        style={{ maxWidth: "300px", flexGrow: 0, flexShrink: 0 }}
-      />
-      <Stack maw="100%">
-        <Badge color="blue" variant="filled">
-          {badge}
-        </Badge>
-        <Title order={1}>{title}</Title>
-        <Title c="#E63946" order={2} size="h3">
-          {subtitle}
-        </Title>
-        <Text>{description}</Text>
+    <>
+      <Group
+        visibleFrom="md"
+        px={50}
+        align="flex-start"
+        grow
+        mt={50}
+        wrap="nowrap"
+      >
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={300}
+          height={300}
+          style={{ maxWidth: "300px", flexGrow: 0, flexShrink: 0 }}
+        />
+        <Stack maw="100%">
+          <Badge color="blue" variant="filled">
+            {badge}
+          </Badge>
+          <Title order={1}>{title}</Title>
+          <Title c="#E63946" order={2} size="h3">
+            {subtitle}
+          </Title>
+          <Text>{description}</Text>
+        </Stack>
+      </Group>
+      <Stack hiddenFrom="md" px={50} align="flex-start" mt={50}>
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          width={300}
+          height={300}
+          style={{ maxWidth: "300px", flexGrow: 0, flexShrink: 0 }}
+        />
+        <Stack maw="100%">
+          <Badge color="blue" variant="filled">
+            {badge}
+          </Badge>
+          <Title order={1}>{title}</Title>
+          <Title c="#E63946" order={2} size="h3">
+            {subtitle}
+          </Title>
+          <Text>{description}</Text>
+        </Stack>
       </Stack>
-    </Group>
+    </>
   );
 }
 
@@ -113,7 +141,7 @@ interface ServicesGridProps {
 
 function ServicesGrid({ services }: ServicesGridProps) {
   return (
-    <Box px={100} mt={50} className={styles.serviceCards}>
+    <Box px={{ base: 0, sm: 100 }} mt={50} className={styles.serviceCards}>
       <SimpleGrid cols={{ base: 1, md: 2 }}>
         {services.map((service, index) => (
           <ServiceCard key={index} {...service} />
@@ -262,6 +290,7 @@ export default function DevelopmentCenter() {
     // </Container>
     <>
       <Box
+        h={{base: 600, sm: 400}}
         style={{
           background: "linear-gradient(135deg, #D33F49 0%, #C13640 100%)",
           padding: "40px",
@@ -270,7 +299,6 @@ export default function DevelopmentCenter() {
           marginTop: "40px",
           zIndex: 1,
           borderRadius: "0 0 16px 16px",
-          height: "400px",
           alignSelf: "center",
         }}
       >
@@ -299,11 +327,9 @@ export default function DevelopmentCenter() {
           transformasi digital dan membangun generasi yang mampu menghadapi
           tantangan global dengan solusi kreatif dan inovatif.
         </Text>
-
         <SimpleGrid
           cols={{ base: 1, xs: 2, md: 3 }}
           spacing="xl"
-          p="md"
           mt={50}
           style={{ justifySelf: "center" }}
         >

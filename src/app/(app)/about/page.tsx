@@ -554,64 +554,78 @@ export default function AboutPage() {
               </Box>
               Tim Kami
             </Title>
-            <Text c={'dimmed'} ta={'center'}>
-              <Text span inherit fw={700}>Scolarsia</Text> memiliki tim yang terdiri dari individu-individu unik
-              dan ahli di bidangnya masing-masing. Kami menyambut berbagai
-              talenta dengan latar belakang yang beragam, yang memungkinkan kami
-              untuk terus berkembang dan saling belajar satu sama lain. Dengan
-              semangat kolaborasi dan inovasi, tim kami bekerja untuk
-              menciptakan dampak positif di dunia pendidikan dan membangun
-              solusi yang menginspirasi banyak orang.
+            <Text c={"dimmed"} ta={"center"}>
+              <Text span inherit fw={700}>
+                Scolarsia
+              </Text>{" "}
+              memiliki tim yang terdiri dari individu-individu unik dan ahli di
+              bidangnya masing-masing. Kami menyambut berbagai talenta dengan
+              latar belakang yang beragam, yang memungkinkan kami untuk terus
+              berkembang dan saling belajar satu sama lain. Dengan semangat
+              kolaborasi dan inovasi, tim kami bekerja untuk menciptakan dampak
+              positif di dunia pendidikan dan membangun solusi yang
+              menginspirasi banyak orang.
             </Text>
           </Stack>
-          <Grid>
+          <Stack gap={20}>
             {[
               {
                 name: "Bayu Eka Wibowo",
                 position: "Founder & CEO",
                 image: "/about-us-1.jpg",
+                desc: "Bayu adalah seorang ahli teknologi informasi dengan rekam jejak luar biasa. Memulai perjalanan kariernya sebagai Network Engineer di PT Datautama Dinamika, ia terus mengasah keahliannya hingga menjadi Project Manager di PT Divisant Teknologi Indonesia. Dengan keahlian dalam rekayasa jaringan dan strategi kepemimpinan, Bayu telah sukses memimpin proyek transformasi digital inovatif. Sebagai CEO, ia berfokus pada kemajuan teknologi, solusi IT cerdas, dan pengembangan bisnis di era digital.",
               },
               {
                 name: "Nur Hidayati Sihono",
                 position: "Chief Operations Officer",
                 image: "/about-us-2.jpg",
+                desc: "Hida adalah seorang ahli di bidang Product dan Operational, dengan pengalaman lebih dari dua tahun memimpin operasional di Asia Tenggara. Fokus utamanya adalah mengoptimalkan manajemen produk dan meningkatkan efisiensi operasional, berhasil mengurangi 80% masalah operasional. Dengan keahlian dalam analisis data dan pengelolaan risiko, Hida memastikan tim beroperasi secara efektif, mendorong transformasi digital dan pencapaian hasil optimal untuk perusahaan.",
               },
               {
                 name: "Firsta Royan Daliska",
                 position: "Head of Scholarship Services",
                 image: "/about-us-3.jpg",
+                desc: "Sebagai CTO Royan membawa lebih dari 3 tahun pengalaman di bidang pengembangan frontend, dengan keahlian dalam Next.js, Zustand, Angular, dan Vue.js. Sebelumnya, ia bekerja sebagai Frontend Engineer di KoinWorks dan Paper.id, berfokus pada pengembangan aplikasi yang responsif dan skalabel. Royan memimpin tim teknologi untuk menciptakan solusi inovatif yang mendukung pertumbuhan digital dan efisiensi operasional di perusahaan.",
               },
               {
                 name: "Andre Diwa Aji",
                 position: "Development Center Director",
                 image: "/about-us-4.jpg",
+                desc: "Sebagai Chief Education Curriculum Andre mengintegrasikan pengalaman lebih dari 5 tahun dalam pengembangan proses bisnis IT dan teknologi pendidikan. Dengan latar belakang sebagai PegaSystem Developer dan Software Programmer, ia memiliki keahlian dalam arsitektur database, pengelolaan sistem, serta pengembangan frontend. Andre memimpin inovasi kurikulum berbasis teknologi untuk mendukung pertumbuhan digital dan pengembangan sumber daya manusia yang berkelanjutan.",
               },
             ].map((member, index) => (
-              <GridCol key={index} span={{ base: 12, sm: 6, md: 3 }}>
-                <Box
-                  pb={20}
-                  style={{
-                    textAlign: "center",
-                    transition: "transform 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-5px)",
-                    },
-                  }}
-                >
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    radius="md"
-                    height={240}
-                    fit="cover"
-                    mb="md"
-                  />
+              <Flex
+                direction={ index % 2 === 0 ? { base: "column", md: "row" } : { base: "column", md: "row-reverse" }}
+                key={index}
+                gap={50}
+                pb={20}
+                align={"center"}
+                style={{
+                  transition: "transform 0.3s ease",
+                  "&:hover": {
+                    transform: "translateY(-5px)",
+                  },
+                }}
+              >
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  radius="md"
+                  fit="cover"
+                  mb="md"
+                  w={300}
+                  h={300}
+                />
+                <Stack gap={0}>
                   <Title order={4}>{member.name}</Title>
-                  <Text c="dimmed">{member.position}</Text>
-                </Box>
-              </GridCol>
+                  <Text fw={750} c="#D64045">
+                    {member.position}
+                  </Text>
+                  <Text ta={'justify'} mt={8}>{member.desc}</Text>
+                </Stack>
+              </Flex>
             ))}
-          </Grid>
+          </Stack>
         </Container>
       </Box>
 
