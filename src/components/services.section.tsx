@@ -1,4 +1,4 @@
-import React, { ForwardRefExoticComponent, RefAttributes } from 'react';
+import React, { ForwardRefExoticComponent, MemoExoticComponent, RefAttributes, SVGProps } from 'react';
 import styles from './services.section.module.css';
 import {
   IconSchool,
@@ -36,7 +36,7 @@ export const ServiceCard: React.FC<ServiceData & { center?: boolean }> = ({
     alignItems: center ? 'center' : 'flex-start' 
   }}>
     <div className={styles.iconWrapper}>
-      <Icon size={24} stroke={1.5} />
+      <Icon size={24} stroke={1.5} color='#E63946' />
     </div>
     <Text component="h3" fw={600} mb="xs" ta={center ? 'center' : 'left'}>{title}</Text>
     {description && <Text ta={center ? 'center' : 'left'}>{description}</Text>}

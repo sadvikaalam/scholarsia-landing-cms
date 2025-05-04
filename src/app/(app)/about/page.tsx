@@ -43,20 +43,29 @@ export default function AboutPage() {
     <>
       {/* About Us */}
       <Box
+        pos={"relative"}
         py={80}
         pb={80}
         mt={40}
         style={{
-          display: "block",
           borderRadius: "0 0 24px 24px",
           backgroundImage: `url('/bg-pattern-2.png')`, // Optional SVG or PNG
           backgroundSize: "100%",
           backgroundRepeat: "no-repeat",
-          backgroundBlendMode: "multiply",
-          backgroundColor: "#E63946",
+          backgroundPosition: "center bottom",
+          overflow: "hidden",
         }}
       >
-        <Container size="lg">
+        <Box
+          pos={"absolute"}
+          top={0}
+          right={0}
+          bottom={0}
+          left={0}
+          bg={"#E63946"}
+          style={{ mixBlendMode: "multiply" }}
+        />
+        <Container size="lg" pos={"relative"}>
           <Grid gutter={50}>
             <GridCol span={{ base: 12, md: 6 }}>
               <Stack gap="xl">
@@ -595,7 +604,11 @@ export default function AboutPage() {
               },
             ].map((member, index) => (
               <Flex
-                direction={ index % 2 === 0 ? { base: "column", md: "row" } : { base: "column", md: "row-reverse" }}
+                direction={
+                  index % 2 === 0
+                    ? { base: "column", md: "row" }
+                    : { base: "column", md: "row-reverse" }
+                }
                 key={index}
                 gap={50}
                 pb={20}
@@ -621,7 +634,9 @@ export default function AboutPage() {
                   <Text fw={750} c="#D64045">
                     {member.position}
                   </Text>
-                  <Text ta={'justify'} mt={8}>{member.desc}</Text>
+                  <Text ta={"justify"} mt={8}>
+                    {member.desc}
+                  </Text>
                 </Stack>
               </Flex>
             ))}

@@ -43,8 +43,8 @@ export function Footer() {
   return (
     <Box
       component="footer"
-      bg="rgba(251, 200, 0, 0.3)"
-      c="black"
+      bg="#E63946"
+      c="white"
       pt={80}
       pb={40}
     >
@@ -64,7 +64,7 @@ export function Footer() {
             /> */}
             {/* <MantineLogo size={28}/> */}
             <Image
-              src="/scholarsia-logo.svg"
+              src="/scholarsia-logo-white.svg"
               alt="Scholarsia Logo"
               width={116}
               height={30}
@@ -90,7 +90,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    style={{ color: "black", textDecoration: "none" }}
+                    style={{ color: "white", textDecoration: "none" }}
                   >
                     <Text size="sm">{link.label}</Text>
                   </Link>
@@ -105,7 +105,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    style={{ color: "black", textDecoration: "none" }}
+                    style={{ color: "white", textDecoration: "none" }}
                   >
                     <Text size="sm">{link.label}</Text>
                   </Link>
@@ -120,7 +120,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    style={{ color: "black", textDecoration: "none" }}
+                    style={{ color: "white", textDecoration: "none" }}
                   >
                     <Text size="sm">{link.label}</Text>
                   </Link>
@@ -136,9 +136,9 @@ export function Footer() {
                     key={social.label}
                     href={social.href}
                     style={{
-                      color: "black",
+                      color: "white",
                       textDecoration: "none",
-                      border: "1px solid black",
+                      border: "1px solid white",
                       borderRadius: "50%",
                       padding: "8px",
                       display: "flex",
@@ -161,7 +161,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    style={{ color: "black", textDecoration: "none" }}
+                    style={{ color: "white", textDecoration: "none" }}
                   >
                     <Text size="sm">{link.label}</Text>
                   </Link>
@@ -176,7 +176,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    style={{ color: "black", textDecoration: "none" }}
+                    style={{ color: "white", textDecoration: "none" }}
                   >
                     <Text size="sm">{link.label}</Text>
                   </Link>
@@ -191,7 +191,7 @@ export function Footer() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    style={{ color: "black", textDecoration: "none" }}
+                    style={{ color: "white", textDecoration: "none" }}
                   >
                     <Text size="sm">{link.label}</Text>
                   </Link>
@@ -207,9 +207,9 @@ export function Footer() {
                     key={social.label}
                     href={social.href}
                     style={{
-                      color: "black",
+                      color: "white",
                       textDecoration: "none",
-                      border: "1px solid black",
+                      border: "1px solid white",
                       borderRadius: "50%",
                       padding: "8px",
                       display: "flex",
