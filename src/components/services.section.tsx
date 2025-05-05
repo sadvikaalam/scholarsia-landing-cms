@@ -30,11 +30,14 @@ export const ServiceCard: React.FC<ServiceData & { center?: boolean }> = ({
   description, 
   center 
 }) => (
-  <div className={styles.serviceCard} style={{ 
+  <div className={styles.serviceCard} 
+    style={{ 
     display: 'flex', 
     flexDirection: 'column', 
-    alignItems: center ? 'center' : 'flex-start' 
-  }}>
+    alignItems: center ? 'center' : 'flex-start',
+    minHeight: '100%'
+  }}
+  >
     <div className={styles.iconWrapper}>
       <Icon size={24} stroke={1.5} color='#E63946' />
     </div>

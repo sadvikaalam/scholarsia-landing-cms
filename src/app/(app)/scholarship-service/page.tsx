@@ -1,10 +1,8 @@
 "use client";
 
 import {
-  Container,
   Title,
   Text,
-  SimpleGrid,
   Card,
   Image,
   Badge,
@@ -12,27 +10,26 @@ import {
   Button,
   Stack,
   Box,
+  Grid,
+  GridCol,
+  Container,
+  List,
+  ListItem,
 } from "@mantine/core";
 import {
   Icon,
-  IconArrowRight,
   IconProps,
   IconSchool,
-  IconTent,
-  IconCertificate,
-  IconWorld,
-  IconMoonStars,
   IconSnowflake,
   IconSun,
   IconLanguage,
   IconBuildingStore,
+  IconPinFilled,
+  IconMapPinFilled,
 } from "@tabler/icons-react";
-import classes from "./scholarship-service.module.css";
 import styles from "@/styles/shared.module.css";
 import { ServiceCard } from "@/components/services.section";
-import { ForwardRefExoticComponent, MemoExoticComponent, RefAttributes, SVGProps } from "react";
-import { EmailBanner } from "@/components/email-banner.section";
-import BulbIcon from "@/components/icons/BulbIcon";
+import { ForwardRefExoticComponent, RefAttributes } from "react";
 
 type ServiceData = {
   icon: ForwardRefExoticComponent<IconProps & RefAttributes<Icon>>;
@@ -87,11 +84,13 @@ interface ServicesGridProps {
 function ServicesGrid({ services }: ServicesGridProps) {
   return (
     <Box px={100} mt={50} className={styles.serviceCards}>
-      <SimpleGrid cols={{ base: 1, md: 2 }}>
+      <Grid justify="center" gutter="md">
         {services.map((service, index) => (
-          <ServiceCard key={index} {...service} />
+          <GridCol span={{ base: 12, sm: 6 }} key={index}>
+            <ServiceCard key={index} {...service} />
+          </GridCol>
         ))}
-      </SimpleGrid>
+      </Grid>
     </Box>
   );
 }
@@ -357,8 +356,58 @@ Universitas-universitas di Indonesia bekerja sama dengan kampus ternama seperti 
         </Box>
       </Stack>
 
-      <Box py={{ base: 40, md: 80 }}>
-        <EmailBanner />
+      <Box py={40} px={{ base: 0, md: 80 }} bg={"#8A3FFC"}>
+        {/* <EmailBanner /> */}
+        <Container size={"lg"}>
+          <Grid grow justify="center" align="center" gutter="50">
+            <GridCol span={{ base: 12, md: 6 }}>
+              <Stack gap={"xl"}>
+                <Title c={"white"} order={2}>
+                  Bingung Mulai Persiapan Studi Abroad?
+                </Title>
+                <Text c={"white"} mt={10} mb={20} ta={"justify"}>
+                  Tidak tahu harus mulai dari mana? Tenang, kami siap membantu!
+                  🚀 <br />
+                  📌 Konsultasi dengan Ahli – Dapatkan panduan lengkap sesuai
+                  kebutuhanmu. <br />
+                  📌 #StudentSuccess – Wujudkan impian kuliah di luar negeri
+                  dengan persiapan terbaik. <br />
+                  📌 Bebas Pilih Jadwal – Konsultasi fleksibel, pilih waktu yang
+                  paling nyaman untukmu!
+                  <br />
+                  📍 Alamat: Apartemen Mediterania Garden Residence 1, Tower
+                  Dahlia Jl. Tanjung Duren Raya Kav. 5-9 RT/RW. 003/005 Kel.
+                  Tanjung Duren Selatan, Kec. Grogol Petamburan, Kota Jakarta
+                  Barat, DKI Jakarta - 11470
+                </Text>
+                <Box>
+                  <Button
+                    style={{ backgroundColor: "#FFC107", color: "#E63946" }}
+                    variant="filled"
+                  >
+                    Hubungi Lebih Lanjut
+                  </Button>
+                </Box>
+              </Stack>
+            </GridCol>
+            <GridCol span={{ base: 12, md: 6 }}>
+              <Box
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  alignItems: "flex-end",
+                }}
+              >
+                <Image
+                  src="/contact-us.png"
+                  alt="Contact Us"
+                  width={"80%"}
+                  fit="cover"
+                />
+              </Box>
+            </GridCol>
+          </Grid>
+        </Container>
       </Box>
     </>
   );
